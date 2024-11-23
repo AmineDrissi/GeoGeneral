@@ -1,16 +1,20 @@
 import React from 'react';
-
+import "./style.css"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from './pages/LandingPage/LandingPage';
+import Navbar from './components/Navbar/Navbar';
 function App() {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Navbar/>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<LandingPage />} />
+          {/* <Route path="/about" element={<About />} /> */}
+          {/* <Route path="/contact" element={<Contact />} /> */}
+          {/* <Route path="*" element={<NotFound />} /> */}
+        </Routes>
+      </Router>
     </div>
   );
 }
